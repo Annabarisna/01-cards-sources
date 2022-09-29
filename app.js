@@ -1,7 +1,8 @@
-function slidesPlugin(activeSlide){
+function slidesPlugin(randomActiveSlide){
 
     const slides = document.querySelectorAll('.slide');
-    slides[activeSlide].classList.add('active');
+    const randomActiveSlide = Math.floor(Math.random() * slides.length);
+    slides[randomActiveSlide].classList.add('active');
 
     for (const slide of slides) {
         slide.addEventListener('click', () => {
@@ -17,4 +18,4 @@ function slidesPlugin(activeSlide){
     }
 }
 
-slidesPlugin(0);
+slidesPlugin(random, slides[random]);
