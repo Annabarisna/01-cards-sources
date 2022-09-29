@@ -1,40 +1,19 @@
-///function slidesPlugin(){
+function slidesPlugin(activeSlide){
+    const slides = document.querySelectorAll('.slide');
+    slides[activeSlide].classList.add('active');
 
-    //const slides = document.querySelectorAll('.slide');
-    //const randomActiveSlide = Math.floor(Math.random() * slides.length);
-    //slides[randomActiveSlide].classList.add('active');
+    for (const slide of slides) {
+        slide.addEventListener('click', () => {
+            clearActiveClasses()
+            slide.classList.add('active')
+        })
+    }
 
-    //for (const slide of slides) {
-   //     slide.addEventListener('click', () => {
-     //       clearActiveClasses()
-      //      slide.classList.add('active')
-   //     })
-   // }
-
-  //  function clearActiveClasses () {
-       // slides.forEach((slide) => {
-        //    slide.classList.remove('active')
-       // }) 
-  ////  }
-//}
-
-//slidesPlugin(random, slides[random]);
-
-function slidesPlugin(ranSlide){
-const slides = document.querySelectorAll('.slide'); //находим слайды
-const ranSlide = Math.floor(Math.random() * slides.length); //получаем случайный слайд
-ranSlide.classList.add('active'); //активируем случайный слайд
-for (const ranSlide of slides) {
-    ranSlide.addEventListener('click', () => {
-      clearActiveClasses()
-      ranSlide.classList.add('active')
-       })
-     }
- 
     function clearActiveClasses () {
-         slides.forEach((sranSlide) => {
-            ranSlide.classList.remove('active')
-         }) 
-     }
- }
- slidesPlugin();
+       slides.forEach((slide) => {
+            slide.classList.remove('active')
+        }) 
+    }
+}
+
+slidesPlugin(slides[Math.floor(Math.random() * slides.length)]);
