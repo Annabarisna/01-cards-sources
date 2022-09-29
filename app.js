@@ -19,21 +19,21 @@
 //}
 
 //slidesPlugin(random, slides[random]);
+
+function slidesPlugin(ranSlide){
 const slides = document.querySelectorAll('.slide'); //находим слайды
 const ranSlide = Math.floor(Math.random() * slides.length); //получаем случайный слайд
-function slidesPlugin(ranSlide){
-
 ranSlide.classList.add('active'); //активируем случайный слайд
-for (const slide of slides) {
-    slide.addEventListener('click', () => {
+for (const ranSlide of slides) {
+    ranSlide.addEventListener('click', () => {
       clearActiveClasses()
-             slide.classList.add('active')
+      ranSlide.classList.add('active')
        })
      }
  
     function clearActiveClasses () {
-         slides.forEach((slide) => {
-             slide.classList.remove('active')
+         slides.forEach((sranSlide) => {
+            ranSlide.classList.remove('active')
          }) 
      }
  }
