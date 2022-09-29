@@ -16,4 +16,4 @@ function slidesPlugin(activeSlide){
     }
 }
 
-slidesPlugin(slides[Math.floor(Math.random() * slides.length)]);
+slidesPlugin(0);
