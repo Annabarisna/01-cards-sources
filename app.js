@@ -19,10 +19,10 @@
 //}
 
 //slidesPlugin(random, slides[random]);
-
-function slidesPlugin(ranSlide){
 const slides = document.querySelectorAll('.slide'); //находим слайды
 const ranSlide = Math.floor(Math.random() * slides.length); //получаем случайный слайд
+function slidesPlugin(ranSlide){
+
 ranSlide.classList.add('active'); //активируем случайный слайд
 for (const slide of slides) {
     slide.addEventListener('click', () => {
