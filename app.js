@@ -17,4 +17,4 @@ function slidesPlugin(activeSlide){
     }
 }
 
-slidesPlugin(3);
+slidesPlugin(0);
